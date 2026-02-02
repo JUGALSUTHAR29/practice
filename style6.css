@@ -1,0 +1,13 @@
+a{
+    background-color: rgb(139, 139, 169);
+    color: brown;
+}
+a[target]{
+    background-color: #03e963;
+}
+*{
+    background-color: #1a5565;
+}
+img{
+    background-color: rgb(205, 255, 233);
+}                                        

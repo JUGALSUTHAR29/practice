@@ -1,0 +1,18 @@
+label{
+    color: rgb(0, 106, 167);
+}
+input{
+    color: rgba(107, 71, 141, 0.457);
+}
+option{
+    color: rgb(4, 165, 239);
+}
+select{
+    color: rgb(121, 238, 5);
+}
+body{
+   background-color: rgb(111, 110, 92); 
+}
+div {
+    color: rgb(255, 155, 198);
+}
