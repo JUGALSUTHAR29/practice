@@ -1,0 +1,48 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Gilroy';
+}
+html, body {
+        height: 100%;
+        width: 100%;
+        background-color: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}
+.logo {
+        display: grid;
+        grid-template-columns: repeat(2,100px);
+        grid-template-rows: repeat(2,100px);
+        gap: 10px;
+        transform: perspective(500px);
+        rotateY(-20px);
+}
+#box1 {
+        height: 100px;
+        width: 100px;
+        background-color: #f25022;
+        color: red;
+}
+
+#box2 {
+        height: 100px;
+        width: 100px;
+        background-color: #00a4ef;
+        color: blue;
+}
+#box3 {
+        height: 100px;
+        width: 100px;
+        background-color: #7fbb00;
+        color: green;
+}
+#box4 {
+        height: 100px;
+        width: 100px;
+        background-color: #ffb900;
+        color: yellow;
+}

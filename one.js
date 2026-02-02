@@ -1,30 +1,32 @@
-// if (true) {
-//         console.log("this is true value");
-// }
-// else {
-//         console.log("this is false value");
-// } 
-function countArrangement(n) {
-        let count = 0;
-        let used = Array(n+1).fill(false);
-
-        function backtrack(pos) {
-                if (pos > n) {
-                        count++;
-                        return;
-                }
-                for (let i = 1 ; i<=n ; i++) {
-                        if (!used[i] && (i % pos === 0 || pos % i===0
-                        )) {
-                                used[i] = true;
-                                backtrack(pos + 1);
-                                used[i] = false;
-
-                        }
-                }
-
+let todo =[];
+let req = prompt ("enter your request");
+while(true) {
+        if(req == "quit"){
+                console.log("quiting the app");
+                break;
         }
-        backtrack(1);
-        return count;
+        if(req == "list") {
+                console.log("---------");
+                for(let i=0; i<todo.length; i++) {
+                        console.log(i, todo[i]);
+                }
+                console.log("-----------");
+        }
+        else if (req == "add") {
+                let task = prompt("please enter your task whhich you want to be add")
+                todo.push(task);
+                console.log("task added");
+        }
+        else if (req == "delete") {
+                let task = prompt("please enter your task which you want to be delete")
+                todo.splice(idx , 1);
+                console.log("task deleted");        
+        }
+        else {
+                console.log("wrong request");
+        }
+        req = prompt("please enter your request") 
 }
-console.log(countArrangement(6));
+
+
+

@@ -1,36 +1,36 @@
-// var x=5;
-// function getname() {
-//         console.log('good evening');
+//closer
+// function timer(){
+//         var a = 12;
+//         return setTimeout(function(){
+//                 console.log(a);
+//        },2000)
 // }
-// getname();
-//         console.log(x);
-// let locker = new
-// Array(100).fill(false);
-// for (let stu=1; stu<=100; stu++) {
-//         for(let locker= stu-1; locker< 100; locker += stu){
-//                 locker[locker] = !locker[locker];
-//         }
+// var ans = timer();
+
+// function applyOperation(a, b, operation) {
+//   return operation(a, b);
+// }
+// function add(x, y) {
+//   return x + y;
 // }
 
-// let openlocker = [];
-// for(let i=0; i<locker.length; i++) {
-//         if(locker[i]) {
-//                 openlocker.push(i + 1);
-//         }
+// function multiply(x, y) {
+//   return x * y;
 // }
-// console.log("locker remaining open:", openlocker);
-let locker = new Array(100).fill(false);
-for (let stu = 1; stu <= 100; stu++) {
-  for (let lkr = stu - 1; lkr < 100; lkr += stu) {
-    locker[lkr] = !locker[lkr];
-  }
+
+// Using the higher-order function
+// console.log(applyOperation(3, 4, add));    
+// console.log(applyOperation(3, 4, multiply)); 
+
+
+function makeMultiplier(n) {
+  return function(x) {
+    return x * n;
+  };
 }
 
-let openlocker = [];
-for (let i = 0; i < locker.length; i++) {
-  if (locker[i]) {
-    openlocker.push(i + 1);
-  }
-}
+const double = makeMultiplier(2);
+const triple = makeMultiplier(3);
 
-console.log("locker remaining open:", openlocker);
+console.log(double(8)); 
+console.log(triple(9)); 
