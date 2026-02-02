@@ -1,0 +1,41 @@
+/* box{
+        height: 20px;
+        width: 15px;
+        background-color: blue;
+} */
+/* box2{
+        height: 30px;
+        width: 20px;
+        background-color: brown;
+}
+box3{
+        height: 50px;
+        width: 30px;
+        background-color: cadetblue;
+} */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'gilroy';
+}
+html, body {
+        height: 100%;
+        width: 100%;
+
+}
+#box{
+        height: 250px;
+        width: 300px;
+        background-color: blue;
+}
+#box2{
+        height: 300px;
+        width: 300px;
+        background-color: #ed0a4a;
+}
+#box3{
+        height: 300px;
+        width: 300px;
+        background-color: cadetblue;
+}
