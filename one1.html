@@ -1,20 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="one1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-        <div id="logo">
-        <div id="box1"></div>
-        <div id="box2"></div>
-        <div id="box3"></div>
-        <div id="box4"></div>
-       </div>
-         <!-- <h1>hii how are you</h1> -->
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-        <script src="one1.js"></script>
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dramatic Kids Learning Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka+One&family=Lilita+One&display=swap');
+        
+        :root {
+            --primary: #FF4D6D;
+            --secondary: #FF8FA3;
+            --accent: #FFBD00;
+            --dark: #590D22;
+            --light: #fffcfd;
+        }
+        
+        body {
+            font-family: 'Fredoka One', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .title-font {
+            font-family: 'Lilita One', cursive;
+        }
+        
+        .drama-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .drama-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 30px rgba(89, 13, 34, 0.3);
+        }
+        
+        .activity-item:hover {
+            animation: bounce 0.1s;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes floatInOut {
+            0% { transform: scale(0.95); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .curtain {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.821);
+        }
+        
+        .hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes floatInOut {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dramatic Header -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black z-0">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2b5d70aa-3cc8-4b15-ba1b-c27ea7de3944.png" alt="School auditorium stage with red velvet curtains and dramatic lighting effects into sharp color" class="w-full h-full object-cover opacity-70" />
+        </div>
+        
+        <div class="text-center relative z-10 px-4">
+            <h1 class="title-font text-6xl md:text-8xl text-white mb-6 text-shadow">
+                <span class="text-yellow-300 inline-block transition-all duration-500 ease-out hover:animate-[floatInOut_1.5s_ease-in-out_infinite] hover:pr-2">Kids</span> 
+                <span class="text-pink-400 inline-block transition-all duration-500 ease-out hover:animate-[floatInOut_1.5s_ease-in-out_infinite] hover:px-2">Learning</span> 
+                <span class="text-red-400 inline-block transition-all duration-500 ease-out hover:animate-[floatInOut_1.5s_ease-in-out_infinite] hover:pl-2">Academy</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                Where education meets <span class="text-yellow-300 font-bold">drama</span>, 
+                <span class="text-pink-300 font-bold">fun</span>, and <span class="text-red-300 font-bold">joy</span> 
+                in the most spectacular ways!
+            </p>
+            
+            <button class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-extrabold py-3 px-8 rounded-full text-lg transform transition-all hover:scale-110 shadow-xl border-2 border-yellow-700">
+                Experience the Drama!
+            </button>
+        </div>
+    </header>
+
+    <!-- Theatrical Activities Section -->
+    <section class="py-20 bg-gradient-to-b from-dark to-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl md:text-6xl text-white mb-4 text-shadow">
+                    Our <span class="text-yellow-300">Dramatic</span> Activities
+                </h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    We turn learning into a performance where every student is the star!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Drama Card -->
+                <div class="drama-card bg-white rounded-xl overflow-hidden shadow-2xl hover-effect">
+                    <div class="w-full h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ffd0e115-89fd-46a8-89a5-d4fc73c2dc1c.png" alt="Students performing Shakespeare on stage" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-dark mb-3">Theatrical Productions</h3>
+                        <p class="text-gray-700 mb-4">
+                            From Shakespeare to Broadway, our students take center stage in spectacular performances.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Joy Card -->
+                <div class="drama-card bg-white rounded-xl overflow-hidden shadow-2xl hover-effect">
+                    <div class="w-full h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9efe6718-e235-4caa-90bc-d574da94de24.png" alt="Cheerful students playing outdoor games" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-dark mb-3">Joyful Games Galore</h3>
+                        <p class="text-gray-700 mb-4">
+                            Our playground comes alive with laughter through creative games and team-building activities.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Arts Card -->
+                <div class="drama-card bg-white rounded-xl overflow-hidden shadow-2xl hover-effect">
+                    <div class="w-full h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c7b417e6-e74e-442a-a3e1-07a178f42b5a.png" alt="Art studio filled with students creating paintings" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-dark mb-3">Creative Arts Explosion</h3>
+                        <p class="text-gray-700 mb-4">
+                            Unleash your inner artist with our vibrant painting, sculpture, and multimedia workshops.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dramatic Testimonials -->
+    <section class="py-20 bg-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl md:text-6xl mb-4">
+                    Standing <span class="text-yellow-300">Ovation</span> Reviews
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Hear what our students and parents say about our dramatic approach to education
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gradient-to-br from-pink-600 to-red-600 p-6 rounded-xl shadow-xl transform transition-all hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-4">
+                            <span class="text-xl text-red-500">🧑‍🎤</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Alex Johnson</h4>
+                            <p class="text-white text-opacity-80 text-xs">Grade 8 Student</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4">
+                        "I was shy before joining the drama club. Now I love performing! The standing ovation I got last show was the best feeling ever!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gradient-to-br from-yellow-500 to-orange-500 p-6 rounded-xl shadow-lg transform transition-all hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-4">
+                            <span class="text-xl text-yellow-500">👩‍🎨</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Samantha Lee</h4>
+                            <p class="text-white text-opacity-80 text-xs">Art Student</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4">
+                        "The creative freedom we get is amazing. My painting was featured in the gallery show, and now I want to be an artist!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gradient-to-br from-blue-500 to-purple-500 p-6 rounded-xl shadow-lg transform transition-all hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-4">
+                            <span class="text-xl text-blue-500">👨‍👩‍👧</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">The Chen Family</h4>
+                            <p class="text-white text-opacity-80 text-xs">Parents</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4">
+                        "Our daughter comes home buzzing with excitement every day. The energy and creativity at this school is contagious!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Curtain Call -->
+    <section class="py-32 curtain text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="title-font text-4xl md:text-6xl mb-6">
+                Ready for Your <span class="text-yellow-300">Dramatic</span> Entrance?
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Join our school where every day is a performance and every student is the star of their own education story.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-dark font-bold py-4 px-8 rounded-full text-lg transform hover:scale-105 shadow-lg transition-all">
+                    Schedule a Tour
+                </button>
+                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transform hover:scale-105 shadow-lg transition-all">
+                    Apply Now
+                </button>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">25+</div>
+                    <div class="text-lg">Drama Productions</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">100%</div>
+                    <div class="text-lg">Student Participation</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">10</div>
+                    <div class="text-lg">Art Studios</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute inset-0 bg-dark bg-opacity-20"></div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-10 left-10 w-16 h-16 bg-yellow-400 rounded-full opacity-20"></div>
+        <div class="absolute bottom-20 right-16 w-24 h-24 bg-red-400 rounded-full opacity-20"></div>
+        <div class="absolute top-1/4 right-1/3 w-32 h-32 bg-pink-400 rounded-full opacity-20"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-100 py-12 border-t-4 border-purple-600">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="title-font text-2xl mb-4">Kids Learning Academy</h3>
+                    <p class="text-gray-400">
+                        Where education meets drama, fun, and joy in the most spectacular ways!
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Activities</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Drama Club</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Art Studio</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Music Programs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sports & Games</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Events Calendar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
+                    <address class="text-gray-400 not-italic">
+                        123 gangashar<br>
+                        bikaner City, ST gopeshwer<br>
+                        <br>
+                        Phone: 11111xxxx<br>
+                        Email: 111xschool.edu
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2023 Kids Learning Academy. All the world's a stage!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Simple animations for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate activity items on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.activity-item, .drama-card');
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight * 0.75);
+                    
+                    if (isVisible) {
+                        el.classList.add('animate__animated', 'animate__fadeInUp');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Initial check
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
